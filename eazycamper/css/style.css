@@ -1,44 +1,53 @@
-body{
-	width: 100%;
-	margin: 0;
-	padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.header {
+nav {
   display: grid;
-}
-
-.header_title {
-  font-size: 14px;
-  color: #cccc;
-  margin-bottom: 0px;
-}
-
-.header_container {
-  height: 650px;
   background-image: url(../img/Rectangle\ 1.png);
-  position: relative;
-  text-align: right;
-	background-size: 100%;
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  grid-template-columns: 120px 45px 38% auto
+	206px;
+  grid-template-rows: 30px 60px auto;
 }
 
-.header_cube {
-  margin-right: 1130px;
-  padding-left: 50px;
+@media (max-width:840px){
+	nav{
+		max-width:838px;
+	}
 }
-.header_group {
-  padding-right: 300px;
-  padding-top: 30px;
+
+.cube{
+	grid-column: 2/5; 
+	grid-row: 2/3;
+	border:3px dashed #f78065;
+}
+
+.group{
+	grid-column: 5/5;
+	grid-row: 2/3;
+	border:3px dashed #f78065;
+
 }
 
 .header_poster {
-  position: absolute;
-  width: 741px;
-  height: 537px;
+	grid-column: 3/5;
+	grid-row: 3/3;
+	border:3px dashed #f78065;
+  max-width: 741px;
+  max-height: auto;
   background-color: rgb(243, 240, 240);
   object-fit: cover;
-  margin-top: 300px;
-  margin-left: 150px;
+	margin-top: 30%;
+}
+
+@media (max-width:987px){
+	.header_poster{
+		max-width: 550px;
+	}
 }
 
 .poster_content {
@@ -64,6 +73,7 @@ body{
 }
 
 .btn_container {
+	position: absolute;
   display: grid;
   grid-template-columns: 100px 150px;
   margin-top: 30px;
@@ -86,3 +96,4 @@ body{
   font-size: 18px;
   font-style: bold;
 }
+
